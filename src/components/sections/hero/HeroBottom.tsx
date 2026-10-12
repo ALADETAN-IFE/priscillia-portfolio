@@ -35,7 +35,7 @@ const HeroBottom = () => {
           >
             <Image
               src={skills.icon}
-              alt="Hero Background"
+              alt={`${skills.value.toLowerCase().replace(" ", "-")}_sbicon`}
               width="30"
               height="30"
             />
