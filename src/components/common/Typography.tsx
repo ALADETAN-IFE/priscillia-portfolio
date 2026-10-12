@@ -1,9 +1,9 @@
 import { ReactNode } from "react";
 
-type TypographyVariant = "h1" | "p" | "span";
+type TypographyVariant = "h1" | "h2" | "p" | "span";
 
 type TypographyProps = {
-  as?: "h1" | "p" | "span";
+  as?: "h1" | "h2" | "p" | "span";
   variant?: TypographyVariant;
   children: ReactNode;
   className?: string;
@@ -11,6 +11,7 @@ type TypographyProps = {
 
 const variantClasses: Record<TypographyVariant, string> = {
   h1: "font-bold text-(--primary) text-3xl lg:text-4xl",
+  h2: "text-2xl font-semibold",
   p: "text-xl font-normal",
   span: "text-base font-normal",
 };

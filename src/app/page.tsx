@@ -1,6 +1,9 @@
 import { Header } from "@/components/ui/header";
 import { Footer } from "@/components/ui/footer";
 import Sections from "@/components/Sections";
+import { Hero } from "@/components/sections/hero";
+import { About } from "@/components/sections/about";
+import { Services } from "@/components/sections/services";
 
 export default function Home() {
   return (
@@ -8,22 +11,22 @@ export default function Home() {
       <Header />
       <main>
         <Sections id="home">
-          <div className="pt-22.25">hero</div>
+          <div className="pt-22.25 w-full pb-21.75"><Hero /></div>
         </Sections>
         <Sections id="about">
-          <div className="pt-15.25 pb-11.25">about</div>
+          <div className="pt-15.25 pb-11.25 w-full"><About /></div>
         </Sections>
         <Sections id="services">
-          <div className="py-12.5">services</div>
+          <div className="py-12.5 w-full"><Services /></div>
         </Sections>
         <Sections>
-          <div className="py-11">design</div>
+          <div className="py-11 w-full">design</div>
         </Sections>
         <Sections>
-          <div className="py-12.5">skills</div>
+          <div className="py-12.5 w-full">skills</div>
         </Sections>
         <Sections id="portfolio">
-          <div className="pt-16 pb-11.25">portfolio</div>
+          <div className="pt-16 pb-11.25 w-full">portfolio</div>
         </Sections>
       </main>
       <Footer />
