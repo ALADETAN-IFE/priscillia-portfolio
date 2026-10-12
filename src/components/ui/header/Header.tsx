@@ -10,7 +10,7 @@ const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [path, setPath] = useState("");
-  const navLinks = ["Home", "About", "Services", "Portfolio", "Contact"];
+  const navLinks: string[] = ["Home", "About", "Services", "Portfolio", "Contact"];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -62,7 +62,7 @@ const Header = () => {
           height={38}
         />
         <nav className="flex gap-13 max-md:hidden">
-          {navLinks.map((link) => {
+          {navLinks.map((link: string) => {
             const href = `#${link.toLowerCase()}`;
             const isActive = activePath === href;
 
