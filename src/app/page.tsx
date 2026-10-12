@@ -11,7 +11,7 @@ export default function Home() {
       <Header />
       <main>
         <Sections id="home">
-          <div className="pt-22.25 w-full pb-21.75"><Hero /></div>
+          <div className="pt-22.25 w-full pb-26 sm:pb-21.75 flex flex-col gap-100"><Hero /></div>
         </Sections>
         <Sections id="about">
           <div className="pt-15.25 pb-11.25 w-full"><About /></div>

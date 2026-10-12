@@ -61,7 +61,7 @@ const Header = () => {
           width={38}
           height={38}
         />
-        <nav className="flex gap-13 max-md:hidden">
+        <nav className="flex gap-10 [@media(min-width:769px)]:gap-13 max-md:hidden">
           {navLinks.map((link: string) => {
             const href = `#${link.toLowerCase()}`;
             const isActive = activePath === href;
