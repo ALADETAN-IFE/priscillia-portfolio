@@ -35,6 +35,7 @@ const AboutRight = () => {
               alt={`${skills.title.toLowerCase().replaceAll(" ", "-")}_icon`}
               width="16"
               height="16"
+              priority
             />
           </div>
           <div className="flex flex-col gap-1.75">

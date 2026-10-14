@@ -43,6 +43,7 @@ const ServiceBottom = () => {
               alt={`${service.title.toLowerCase().replace(" ", "-")}_sbicon`}
               width="24"
               height="24"
+              priority
             />
           </div>
           <Typography variant="h2">{service.title}</Typography>
