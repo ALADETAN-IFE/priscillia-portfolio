@@ -15,6 +15,7 @@ const HeroRight = () => {
         alt="Hero Background"
         width="613"
         height="696"
+        priority
         className="absolute top-0 md:-top-17 xl:-top-20 left-0"
       />
     </div>
