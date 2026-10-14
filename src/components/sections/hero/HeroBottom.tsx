@@ -38,6 +38,7 @@ const HeroBottom = () => {
               alt={`${skills.value.toLowerCase().replace(" ", "-")}_sbicon`}
               width="30"
               height="30"
+              priority
             />
             <Typography className="text-[15px]">{skills.value}</Typography>
           </div>
