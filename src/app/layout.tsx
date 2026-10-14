@@ -18,9 +18,9 @@ export const metadata: Metadata = {
     designer: "Priscilla Ijomah",
   },
   icons: {
-    icon: "/logo.png",
-    shortcut: "/logo.png",
-    apple: "/logo.png",
+    icon: "/Figmora.png",
+    shortcut: "/Figmora.png",
+    apple: "/Figmora.png",
   },
   robots: {
     index: true,
@@ -56,6 +56,12 @@ export const metadata: Metadata = {
     card: "summary",
     title: "Priscilla Ijomah - Product Designer",
     description: "I create simple, useful and engaging digital experiences that solve real problems and make life easier for people.",
+    images: [{
+      url: "/logo.png",
+      width: 1200,
+        height: 630,
+        alt: "Priscilla Ijomah logo",
+    }]
   },
 };
 
