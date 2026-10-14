@@ -60,6 +60,7 @@ const Header = () => {
           alt="Priscilla Ijomah's Logo"
           width={38}
           height={38}
+          priority
         />
         <nav className="flex gap-10 [@media(min-width:769px)]:gap-13 max-md:hidden">
           {navLinks.map((link: string) => {
