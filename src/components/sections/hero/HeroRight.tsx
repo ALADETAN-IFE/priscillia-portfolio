@@ -12,7 +12,7 @@ const HeroRight = () => {
       />
       <Image
         src="/assets/hero/hero_img.webp"
-        alt="Hero Background"
+        alt="Priscilla_Ijomah_image"
         width="613"
         height="696"
         priority
