@@ -56,7 +56,8 @@ const Header = () => {
         className={`max-w-306 w-9/10 flex ${!isMenuOpen ? "items-center" : "items-start"} justify-between relative`}
       >
         <Image
-          src="/logo.png"
+          // src="/logo.png"
+          src="/Figmora.png"
           alt="Priscilla Ijomah's Logo"
           width={38}
           height={38}
