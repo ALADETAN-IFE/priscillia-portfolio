@@ -15,7 +15,7 @@ const ContactForm = () => {
   const [message, setMessage] = useState("");
   const [response, setResponse] = useState<responseType | undefined>();
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: React.SubmitEvent<HTMLFormElement>) => {
     e.preventDefault();
     const subject = encodeURIComponent(`Project inquiry from ${fullName}`);
     const body = encodeURIComponent(
