@@ -4,6 +4,7 @@ import Sections from "@/components/Sections";
 import { Hero } from "@/components/sections/hero";
 import { About } from "@/components/sections/about";
 import { Services } from "@/components/sections/services";
+import { DesignProcess } from "@/components/sections/design_process";
 
 export default function Home() {
   return (
@@ -20,7 +21,7 @@ export default function Home() {
           <div className="py-12.5 w-full"><Services /></div>
         </Sections>
         <Sections>
-          <div className="py-11 w-full">design</div>
+          <div className="py-11 w-full"><DesignProcess /></div>
         </Sections>
         <Sections>
           <div className="py-12.5 w-full">skills</div>
