@@ -10,12 +10,12 @@ const HeroLeft = () => {
             &nbsp;Priscilla Ijomah.
           </Typography>
         </Typography>
-        <Typography className="text-6xl! lg:text-8xl! xl:text-9xl! font-semibold tracking-0 leading-15 lg:leading-24 xl:leading-32 pt-0.5">
+        <Typography className="text-5xl! lg:text-8xl! xl:text-9xl! font-semibold tracking-0 leading-12 lg:leading-24 xl:leading-32 pt-0.5">
           Product
           <br />
           Designer
         </Typography>
-        <Typography className="max-lg:text-xl font-normal! max-w-131.25" variant="h2">
+        <Typography className="text-xl max-md:text-lg max-lg:text-xl font-normal! max-w-131.25" variant="h2">
           I create simple, useful and engaging digital experiences that solve
           real problems and make life easier for people.
         </Typography>
