@@ -9,6 +9,7 @@
   --icon-bg-secondary: #36383B;
   --contact-border: #808080;
   --header-nav: #171717;
+  --project-bg: #FEFEFE;
 }
 
 @theme inline {
@@ -20,6 +21,7 @@
   --color-icon-bg-secondary: var(--icon-bg-secondary);
   --color-contact-border: var(--contact-border);
   --color-header-nav: var(--header-nav);
+  --color-project-bg: var(--project-bg);
   --font-sans: var(--font-montserrat), system-ui, sans-serif;
   --breakpoint-xs: 30rem;
 }

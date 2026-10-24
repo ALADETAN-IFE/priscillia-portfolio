@@ -5,6 +5,7 @@ import { Hero } from "@/components/sections/hero";
 import { About } from "@/components/sections/about";
 import { Services } from "@/components/sections/services";
 import { DesignProcess } from "@/components/sections/design_process";
+import { Portfolio } from "@/components/sections/portfolio";
 
 export default function Home() {
   return (
@@ -27,7 +28,7 @@ export default function Home() {
           <div className="py-12.5 w-full">skills</div>
         </Sections>
         <Sections id="portfolio">
-          <div className="pt-16 pb-11.25 w-full">portfolio</div>
+          <div className="pt-16 pb-11.25 w-full"><Portfolio/></div>
         </Sections>
       </main>
       <Footer />
