@@ -29,7 +29,7 @@ const AboutRight = () => {
     <div className="max-w-89.75 flex flex-col gap-16.25">
       {aboutMeSkills.map((skills: aboutMeSkillsType) => (
         <div className="flex gap-3.75" key={skills.title}>
-          <div className="flex justify-center items-center w-7.5 h-7.5 bg-(--icon-bg-primary) rounded-full shrink-0">
+          <div className="flex justify-center items-center w-7.5 h-7.5 bg-icon-bg-primary rounded-full shrink-0">
             <Image
               src={skills.icon}
               alt={`${skills.title.toLowerCase().replaceAll(" ", "-")}_icon`}
@@ -39,13 +39,10 @@ const AboutRight = () => {
             />
           </div>
           <div className="flex flex-col gap-1.75">
-            <Typography className="font-semibold text-(--tertiary)">
+            <Typography className="font-semibold text-tertiary">
               {skills.title}
             </Typography>
-            <Typography
-              className="font-medium text-(--tertiary)"
-              variant="span"
-            >
+            <Typography className="font-medium text-tertiary" variant="span">
               {skills.desc}
             </Typography>
           </div>

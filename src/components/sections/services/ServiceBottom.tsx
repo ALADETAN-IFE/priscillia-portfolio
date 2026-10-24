@@ -37,7 +37,7 @@ const ServiceBottom = () => {
           className="flex min-h-62.75 min-w-0 w-full flex-col gap-2.5 rounded-[5px] bg-[#FAF9FA] pb-10 pl-8 pr-2.25 pt-2.25"
           key={service.title}
         >
-          <div className="flex justify-center items-center h-12.5 w-12.5 bg-(--icon-bg-primary) rounded-[5px] shrink-0">
+          <div className="flex justify-center items-center h-12.5 w-12.5 bg-icon-bg-primary rounded-[5px] shrink-0">
             <Image
               src={service.icon}
               alt={`${service.title.toLowerCase().replace(" ", "-")}_sbicon`}

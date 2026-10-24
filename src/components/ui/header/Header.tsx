@@ -10,7 +10,13 @@ const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [path, setPath] = useState("");
-  const navLinks: string[] = ["Home", "About", "Services", "Portfolio", "Contact"];
+  const navLinks: string[] = [
+    "Home",
+    "About",
+    "Services",
+    "Portfolio",
+    "Contact",
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -76,8 +82,8 @@ const Header = () => {
                 onClick={() => handleNavClick(href)}
                 className={`relative py-2 font-semibold transition-colors duration-200 ${
                   isActive
-                    ? "text-(--primary) after:absolute after:inset-x-0 after:bottom-0 after:h-0.5 after:bg-(--primary) after:content-['']"
-                    : "text-(--header-nav) hover:text-(--primary)"
+                    ? "text-primary after:absolute after:inset-x-0 after:bottom-0 after:h-0.5 after:bg-primary after:content-['']"
+                    : "text-header-nav hover:text-primary"
                 }`}
               >
                 <Typography className="font-semibold! text-base!">
@@ -98,7 +104,7 @@ const Header = () => {
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           aria-expanded={isMenuOpen}
           onClick={() => setIsMenuOpen((open) => !open)}
-          className="hidden cursor-pointer p-1 text-(--secondary) max-md:block"
+          className="hidden cursor-pointer p-1 text-secondary max-md:block"
         >
           {isMenuOpen ? <X size={26} /> : <Menu size={26} />}
         </button>
@@ -117,7 +123,9 @@ const Header = () => {
                     aria-current={isActive ? "page" : undefined}
                     onClick={() => handleNavClick(href)}
                     className={`w-full p-2 text-center font-semibold transition-colors duration-200 ${
-                      isActive ? "text-(--primary)" : "text-(--header-nav) hover:text-(--primary)"
+                      isActive
+                        ? "text-primary"
+                        : "text-header-nav hover:text-primary"
                     }`}
                   >
                     <Typography className="font-semibold! text-base!">

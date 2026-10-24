@@ -26,7 +26,7 @@ const HeroBottom = () => {
     },
   ];
   return (
-    <div className="w-full bg-(--tertiary) absolute bottom-0 left-0 min-h-21.75 sm:h-21.75 flex justify-center">
+    <div className="w-full bg-tertiary absolute bottom-0 left-0 min-h-21.75 sm:h-21.75 flex justify-center">
       <div className="max-w-306 w-9/10 flex py-5.75 h-full justify-between items-center max-sm:grid max-sm:grid-cols-2 gap-3">
         {mainSkills.map((skills: mainSkillsType) => (
           <div

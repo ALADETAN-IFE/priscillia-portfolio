@@ -10,7 +10,7 @@ type TypographyProps = {
 };
 
 const variantClasses: Record<TypographyVariant, string> = {
-  h1: "font-bold text-(--primary) text-2xl lg:text-3xl xl:text-4xl",
+  h1: "font-bold text-primary text-2xl lg:text-3xl xl:text-4xl",
   h2: "text-2xl font-semibold",
   p: "text-xl font-normal",
   span: "text-base font-normal",

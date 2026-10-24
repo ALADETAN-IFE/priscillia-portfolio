@@ -51,7 +51,7 @@ const DesignProcessBottom = () => {
           key={designProcess.title}
         >
           <div className="flex w-full min-w-0 max-w-33.25 flex-col items-center gap-1.75">
-            <div className="flex justify-center items-center w-15 h-15 bg-(--icon-bg-primary) rounded-full shrink-0">
+            <div className="flex justify-center items-center w-15 h-15 bg-icon-bg-primary rounded-full shrink-0">
               <Image
                 src={designProcess.icon}
                 alt={`${designProcess.title}_icon`}
@@ -71,7 +71,7 @@ const DesignProcessBottom = () => {
             size={24}
             className={`${designProcess.hide ? "hidden" : ""} mt-0 shrink-0 rotate-90 ${
               index === designProcesses.length - 2 && "xs:-rotate-10"
-            } text-(--primary) sm:mt-6 sm:rotate-0`}
+            } text-primary sm:mt-6 sm:rotate-0`}
           />
         </div>
       ))}

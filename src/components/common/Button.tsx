@@ -19,7 +19,7 @@ const Button = ({
   return (
     <button
       type={type}
-      className={`h-11 px-2.5 text-white bg-(--primary) hover:bg-(--primary)/70 flex items-center justify-center gap-1.5 ${rounded ? "rounded-[100px]" : "rounded-[10px]"} transition-all ease-in duration-650 font-semibold text-base cursor-pointer ${className}`}
+      className={`h-11 px-2.5 text-white bg-primary hover:bg-primary/70 flex items-center justify-center gap-1.5 ${rounded ? "rounded-[100px]" : "rounded-[10px]"} transition-all ease-in duration-650 font-semibold text-base cursor-pointer ${className}`}
       {...props}
     >
       {value} {icon && <MoveRight />}

@@ -12,6 +12,14 @@
 }
 
 @theme inline {
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-tertiary: var(--tertiary);
+  --color-quaternary: var(--quaternary);
+  --color-icon-bg-primary: var(--icon-bg-primary);
+  --color-icon-bg-secondary: var(--icon-bg-secondary);
+  --color-contact-border: var(--contact-border);
+  --color-header-nav: var(--header-nav);
   --font-sans: var(--font-montserrat), system-ui, sans-serif;
   --breakpoint-xs: 30rem;
 }

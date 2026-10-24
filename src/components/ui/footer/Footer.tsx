@@ -2,12 +2,11 @@ import { HorizontalLine, Typography } from "@/components/common";
 import Link from "next/link";
 import ContactForm from "./ContactForm";
 
-
 const Footer = () => {
   return (
     <footer
       id="contact"
-      className="w-full bg-(--secondary) flex justify-center max-sm:px-5 min-h-111 py-1"
+      className="w-full bg-secondary flex justify-center max-sm:px-5 min-h-111 py-1"
     >
       <div className="max-w-306 w-9/10 flex max-md:flex-col justify-between items-center">
         <div className="pt-8.25 pb-6.75 flex max-sm:flex-col justify-between gap-10 xl:gap-60.5 w-full">
@@ -19,10 +18,7 @@ const Footer = () => {
                   Let&apos;s Work Together!
                 </Typography>
               </div>
-              <Typography
-                variant="span"
-                className="text-(--tertiary) font-medium"
-              >
+              <Typography variant="span" className="text-tertiary font-medium">
                 Have a project idea or design challenge? I&apos;d love to hear
                 from you.
               </Typography>
@@ -43,9 +39,7 @@ const Footer = () => {
                   Whatsapp
                 </Typography>
                 <Typography variant="span" className="font-semibold">
-                  <Link href="https://wa.me/2347089984480">
-                    +2347089984480
-                  </Link>
+                  <Link href="https://wa.me/2347089984480">+2347089984480</Link>
                 </Typography>
               </div>
               <div className="flex w-full justify-between gap-10 lg:gap-34">
@@ -60,7 +54,9 @@ const Footer = () => {
               </div>
             </div>
           </div>
-          <div className="flex md:w-114.5 w-full"><ContactForm/></div>
+          <div className="flex md:w-114.5 w-full">
+            <ContactForm />
+          </div>
         </div>
       </div>
     </footer>
