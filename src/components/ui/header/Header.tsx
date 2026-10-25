@@ -52,12 +52,21 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 z-50 flex w-full justify-center max-sm:px-5 min-h-10.25 py-1 transition-[margin,background-color,backdrop-filter,box-shadow,border-color] duration-350 ${
-        isScrolled
-          ? "mt-4 border border-white/30 bg-white/70 shadow-lg backdrop-blur-md"
-          : "mt-14.75 bg-white"
-      }`}
+      className={`fixed top-0 z-50 flex w-full justify-center max-sm:px-5 min-h-10.25 py-1 transition-[margin,background-color,backdrop-filter,box-shadow,border-color] duration-350 ${isScrolled
+          ? "mt-4"
+          : "mt-14.75"
+        }`}
     >
+      <div className="flex w-full justify-center absolute top-0 left-0 h-full">
+        <div
+          style={{ alignItems: "self-end" }}
+          className={`max-w-7xl w-9/10 sm:w-95/100 h-full rounded-full ${isScrolled
+            ? "border border-white/30 bg-white/70 shadow-lg backdrop-blur-md"
+            : ""
+            }`}
+        />
+
+      </div>
       <div
         className={`max-w-306 w-9/10 flex ${!isMenuOpen ? "items-center" : "items-start"} justify-between relative`}
       >
@@ -80,11 +89,10 @@ const Header = () => {
                 key={link}
                 aria-current={isActive ? "page" : undefined}
                 onClick={() => handleNavClick(href)}
-                className={`relative py-2 font-semibold transition-colors duration-200 ${
-                  isActive
+                className={`relative py-2 font-semibold transition-colors duration-200 ${isActive
                     ? "text-primary after:absolute after:inset-x-0 after:bottom-0 after:h-0.5 after:bg-primary after:content-['']"
                     : "text-header-nav hover:text-primary"
-                }`}
+                  }`}
               >
                 <Typography className="font-semibold! text-base!">
                   {link}
@@ -122,11 +130,10 @@ const Header = () => {
                     key={link}
                     aria-current={isActive ? "page" : undefined}
                     onClick={() => handleNavClick(href)}
-                    className={`w-full p-2 text-center font-semibold transition-colors duration-200 ${
-                      isActive
+                    className={`w-full p-2 text-center font-semibold transition-colors duration-200 ${isActive
                         ? "text-primary"
                         : "text-header-nav hover:text-primary"
-                    }`}
+                      }`}
                   >
                     <Typography className="font-semibold! text-base!">
                       {link}
