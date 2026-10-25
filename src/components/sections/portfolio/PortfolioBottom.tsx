@@ -63,7 +63,7 @@ const PortfolioBottom = () => {
       {projects.map((project: projectType, index: number) => (
         <div
           key={project.title}
-          className="flex bg-project-bg rounded-[5px] justify-center items-center w-full py-7"
+          className="flex bg-project-bg rounded-[5px] max-sm:px-2.5 justify-center items-center w-full py-7"
         >
           <div
             className={`flex h-full w-94/100 gap-12.5 max-md:items-center ${index % 2 == 1 ? "flex-col-reverse md:flex-row-reverse justify-between" : "flex-col md:flex-row justify-start"}`}
