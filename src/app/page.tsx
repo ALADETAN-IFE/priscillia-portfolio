@@ -6,6 +6,7 @@ import { About } from "@/components/sections/about";
 import { Services } from "@/components/sections/services";
 import { DesignProcess } from "@/components/sections/design_process";
 import { Portfolio } from "@/components/sections/portfolio";
+import { Skills } from "@/components/sections/skills";
 
 export default function Home() {
   return (
@@ -25,7 +26,7 @@ export default function Home() {
           <div className="py-11 w-full"><DesignProcess /></div>
         </Sections>
         <Sections>
-          <div className="py-12.5 w-full">skills</div>
+          <div className="py-12.5 w-full"><Skills/></div>
         </Sections>
         <Sections id="portfolio">
           <div className="pt-16 pb-11.25 w-full"><Portfolio/></div>
