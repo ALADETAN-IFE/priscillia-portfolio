@@ -18,7 +18,7 @@ const PortfolioTop = () => {
           My Portfolio
         </Typography>
       </div>
-      <Typography variant="h2">Selected Project</Typography>
+      <Typography variant="h2">Selected Projects</Typography>
     </motion.div>
   );
 };
