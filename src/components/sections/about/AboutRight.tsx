@@ -2,7 +2,7 @@
 
 import { Typography } from "@/components/common";
 import Image from "next/image";
-import { motion } from "motion/react";
+import { motion, type Variants } from "motion/react";
 
 type aboutMeSkillsType = {
   title: string;
@@ -29,7 +29,7 @@ const AboutRight = () => {
     },
   ];
 
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -40,14 +40,14 @@ const AboutRight = () => {
     },
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { opacity: 0, x: 25 },
     visible: {
       opacity: 1,
       x: 0,
       transition: {
         duration: 0.55,
-        ease: [0.21, 0.47, 0.32, 0.98],
+        ease: [0.21, 0.47, 0.32, 0.98] as const,
       },
     },
   };

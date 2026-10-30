@@ -8,7 +8,7 @@ const HeroRight = () => {
     <motion.div
       initial={{ opacity: 0, scale: 0.94 }}
       animate={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 0.8, delay: 0.2, ease: [0.21, 0.47, 0.32, 0.98] }}
+      transition={{ duration: 0.8, delay: 0.2, ease: [0.21, 0.47, 0.32, 0.98] as const }}
       className="relative w-full max-[376px]:h-105 max-[426px]:h-115 h-122 md:h-full sm:max-w-153.25 flex justify-end lg:mb-10"
     >
       <Image

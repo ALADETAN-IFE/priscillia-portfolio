@@ -55,7 +55,7 @@ const Header = () => {
     <motion.header
       initial={{ y: -30, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.5, ease: [0.21, 0.47, 0.32, 0.98] }}
+      transition={{ duration: 0.5, ease: [0.21, 0.47, 0.32, 0.98] as const }}
       className={`fixed top-0 z-50 flex w-full justify-center max-sm:px-5 min-h-10.25 py-1 transition-[margin,background-color,backdrop-filter,box-shadow,border-color] duration-350 ${
         isScrolled ? "mt-4" : "mt-14.75"
       }`}

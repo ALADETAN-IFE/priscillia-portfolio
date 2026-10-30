@@ -34,7 +34,7 @@ const Footer = () => {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.6, ease: [0.21, 0.47, 0.32, 0.98] }}
+          transition={{ duration: 0.6, ease: [0.21, 0.47, 0.32, 0.98] as const }}
           className="pt-8.25 pb-6.75 flex max-sm:flex-col justify-between gap-10 xl:gap-60.5 w-full"
         >
           <div className="flex flex-col gap-15">

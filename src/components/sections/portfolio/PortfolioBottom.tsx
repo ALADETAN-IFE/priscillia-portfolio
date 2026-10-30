@@ -73,7 +73,7 @@ const PortfolioBottom = () => {
           transition={{
             duration: 0.65,
             delay: index * 0.1,
-            ease: [0.21, 0.47, 0.32, 0.98],
+            ease: [0.21, 0.47, 0.32, 0.98] as const,
           }}
           className="flex bg-project-bg rounded-[5px] max-sm:px-2.5 justify-center items-center w-full py-7 border border-gray-100/80 shadow-sm hover:shadow-xl transition-all duration-300"
         >
