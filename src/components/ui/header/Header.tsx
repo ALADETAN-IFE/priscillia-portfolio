@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
+import { motion, AnimatePresence } from "motion/react";
 import { Button, Typography } from "@/components/common";
 
 const Header = () => {
@@ -51,24 +52,28 @@ const Header = () => {
   };
 
   return (
-    <header
-      className={`fixed top-0 z-50 flex w-full justify-center max-sm:px-5 min-h-10.25 py-1 transition-[margin,background-color,backdrop-filter,box-shadow,border-color] duration-350 ${isScrolled
-          ? "mt-4"
-          : "mt-14.75"
-        }`}
+    <motion.header
+      initial={{ y: -30, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.5, ease: [0.21, 0.47, 0.32, 0.98] }}
+      className={`fixed top-0 z-50 flex w-full justify-center max-sm:px-5 min-h-10.25 py-1 transition-[margin,background-color,backdrop-filter,box-shadow,border-color] duration-350 ${
+        isScrolled ? "mt-4" : "mt-14.75"
+      }`}
     >
       <div className="flex w-full justify-center absolute top-0 left-0 h-full">
         <div
           style={{ alignItems: "self-end" }}
-          className={`max-w-7xl w-9/10 sm:w-95/100 h-full rounded-full ${isScrolled
-            ? "border border-white/30 bg-white/70 shadow-lg backdrop-blur-md"
-            : ""
-            }`}
+          className={`max-w-7xl w-9/10 sm:w-95/100 h-full rounded-full ${
+            isScrolled
+              ? "border border-white/30 bg-white/70 shadow-lg backdrop-blur-md"
+              : ""
+          }`}
         />
-
       </div>
       <div
-        className={`max-w-306 w-9/10 flex ${!isMenuOpen ? "items-center" : "items-start"} justify-between relative`}
+        className={`max-w-306 w-9/10 flex ${
+          !isMenuOpen ? "items-center" : "items-start"
+        } justify-between relative`}
       >
         <Image
           // src="/logo.png"
@@ -89,10 +94,11 @@ const Header = () => {
                 key={link}
                 aria-current={isActive ? "page" : undefined}
                 onClick={() => handleNavClick(href)}
-                className={`relative py-2 font-semibold transition-colors duration-200 ${isActive
+                className={`relative py-2 font-semibold transition-colors duration-200 ${
+                  isActive
                     ? "text-primary after:absolute after:inset-x-0 after:bottom-0 after:h-0.5 after:bg-primary after:content-['']"
                     : "text-header-nav hover:text-primary"
-                  }`}
+                }`}
               >
                 <Typography className="font-semibold! text-base!">
                   {link}
@@ -107,7 +113,8 @@ const Header = () => {
           rounded={false}
           className="h-8.5! w-28.75 max-md:hidden"
         />
-        <button
+        <motion.button
+          whileTap={{ scale: 0.92 }}
           type="button"
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           aria-expanded={isMenuOpen}
@@ -115,37 +122,46 @@ const Header = () => {
           className="hidden cursor-pointer p-1 text-secondary max-md:block"
         >
           {isMenuOpen ? <X size={26} /> : <Menu size={26} />}
-        </button>
+        </motion.button>
 
-        {isMenuOpen && (
-          <div className="absolute top-full bg-white p-4 z-10 w-full">
-            <nav className="flex gap-3 md:hidden flex-col items-center">
-              {navLinks.map((link) => {
-                const href = `#${link.toLowerCase()}`;
-                const isActive = activePath === href;
+        <AnimatePresence>
+          {isMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0, y: -8 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -8 }}
+              transition={{ duration: 0.2 }}
+              className="absolute top-full bg-white p-4 z-10 w-full"
+            >
+              <nav className="flex gap-3 md:hidden flex-col items-center">
+                {navLinks.map((link) => {
+                  const href = `#${link.toLowerCase()}`;
+                  const isActive = activePath === href;
 
-                return (
-                  <Link
-                    href={href}
-                    key={link}
-                    aria-current={isActive ? "page" : undefined}
-                    onClick={() => handleNavClick(href)}
-                    className={`w-full p-2 text-center font-semibold transition-colors duration-200 ${isActive
-                        ? "text-primary"
-                        : "text-header-nav hover:text-primary"
+                  return (
+                    <Link
+                      href={href}
+                      key={link}
+                      aria-current={isActive ? "page" : undefined}
+                      onClick={() => handleNavClick(href)}
+                      className={`w-full p-2 text-center font-semibold transition-colors duration-200 ${
+                        isActive
+                          ? "text-primary"
+                          : "text-header-nav hover:text-primary"
                       }`}
-                  >
-                    <Typography className="font-semibold! text-base!">
-                      {link}
-                    </Typography>
-                  </Link>
-                );
-              })}
-            </nav>
-          </div>
-        )}
+                    >
+                      <Typography className="font-semibold! text-base!">
+                        {link}
+                      </Typography>
+                    </Link>
+                  );
+                })}
+              </nav>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
-    </header>
+    </motion.header>
   );
 };
 

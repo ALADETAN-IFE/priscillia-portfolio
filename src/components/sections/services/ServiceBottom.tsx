@@ -1,5 +1,8 @@
+"use client";
+
 import { Typography } from "@/components/common";
 import Image from "next/image";
+import { motion } from "motion/react";
 
 type servicesType = {
   title: string;
@@ -30,14 +33,54 @@ const ServiceBottom = () => {
       icon: "/assets/services/closing_tag.svg",
     },
   ];
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.14,
+        delayChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.55,
+        ease: [0.21, 0.47, 0.32, 0.98],
+      },
+    },
+  };
+
   return (
-    <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-4 xl:grid-cols-4">
+    <motion.div
+      variants={containerVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
+      className="grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-4 xl:grid-cols-4"
+    >
       {services.map((service: servicesType) => (
-        <div
-          className="flex min-h-62.75 min-w-0 w-full flex-col gap-2.5 rounded-[5px] bg-[#FAF9FA] pb-10 pl-8 pr-2.25 pt-2.25"
+        <motion.div
+          variants={itemVariants}
+          whileHover={{
+            y: -8,
+            boxShadow: "0 16px 32px -8px rgba(0, 0, 0, 0.08)",
+          }}
+          transition={{ type: "spring", stiffness: 350, damping: 22 }}
+          className="flex min-h-62.75 min-w-0 w-full flex-col gap-2.5 rounded-[5px] bg-[#FAF9FA] hover:border hover:border-primary/30 pb-10 pl-8 pr-2.25 pt-2.25"
           key={service.title}
         >
-          <div className="flex justify-center items-center h-12.5 w-12.5 bg-icon-bg-primary rounded-[5px] shrink-0">
+          <motion.div
+            whileHover={{ scale: 1.12, rotate: 6 }}
+            transition={{ type: "spring", stiffness: 400, damping: 15 }}
+            className="flex justify-center items-center h-12.5 w-12.5 bg-icon-bg-primary rounded-[5px] shrink-0"
+          >
             <Image
               src={service.icon}
               alt={`${service.title.toLowerCase().replace(" ", "-")}_sbicon`}
@@ -45,12 +88,12 @@ const ServiceBottom = () => {
               height="24"
               priority
             />
-          </div>
+          </motion.div>
           <Typography variant="h2">{service.title}</Typography>
           <Typography variant="p">{service.desc}</Typography>
-        </div>
+        </motion.div>
       ))}
-    </div>
+    </motion.div>
   );
 };
 

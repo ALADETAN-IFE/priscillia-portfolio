@@ -1,15 +1,42 @@
+"use client";
+
 import { HorizontalLine, Typography } from "@/components/common";
 import Link from "next/link";
 import ContactForm from "./ContactForm";
+import { motion } from "motion/react";
 
 const Footer = () => {
+  const contactLinks = [
+    {
+      label: "Email",
+      value: "ijomahpriscilla@gmail.com",
+      href: "mailto:ijomahpriscilla@gmail.com",
+    },
+    {
+      label: "Whatsapp",
+      value: "+2347089984480",
+      href: "https://wa.me/2347089984480",
+    },
+    {
+      label: "LinkedIn",
+      value: "linkedin.com/in/priscilla-ijomah",
+      href: "https://www.linkedin.com/in/priscilla-ijomah",
+    },
+  ];
+
   return (
     <footer
       id="contact"
       className="w-full bg-secondary flex justify-center max-sm:px-5 min-h-111 py-1"
     >
       <div className="max-w-306 w-9/10 flex max-md:flex-col justify-between items-center">
-        <div className="pt-8.25 pb-6.75 flex max-sm:flex-col justify-between gap-10 xl:gap-60.5 w-full">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.6, ease: [0.21, 0.47, 0.32, 0.98] }}
+          className="pt-8.25 pb-6.75 flex max-sm:flex-col justify-between gap-10 xl:gap-60.5 w-full"
+        >
           <div className="flex flex-col gap-15">
             <div className="flex flex-col gap-3.75 max-w-83">
               <div className="flex gap-1.25 items-center">
@@ -24,40 +51,34 @@ const Footer = () => {
               </Typography>
             </div>
             <div className="flex flex-col gap-7.5 text-white">
-              <div className="flex w-full justify-between gap-10 lg:gap-34">
-                <Typography variant="span" className="font-semibold">
-                  Email
-                </Typography>
-                <Typography variant="span" className="font-semibold">
-                  <Link href="mailto:ijomahpriscilla@gmail.com">
-                    ijomahpriscilla@gmail.com
-                  </Link>
-                </Typography>
-              </div>
-              <div className="flex w-full justify-between gap-10 lg:gap-34">
-                <Typography variant="span" className="font-semibold">
-                  Whatsapp
-                </Typography>
-                <Typography variant="span" className="font-semibold">
-                  <Link href="https://wa.me/2347089984480">+2347089984480</Link>
-                </Typography>
-              </div>
-              <div className="flex w-full justify-between gap-10 lg:gap-34">
-                <Typography variant="span" className="font-semibold">
-                  LinkedIn
-                </Typography>
-                <Typography variant="span" className="font-semibold">
-                  <Link href="https://www.linkedin.com/in/priscilla-ijomah">
-                    www.linkedin.com/in/priscilla-ijomah
-                  </Link>
-                </Typography>
-              </div>
+              {contactLinks.map((link) => (
+                <motion.div
+                  key={link.label}
+                  whileHover={{ x: 6 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 25 }}
+                  className="flex w-full justify-between gap-10 lg:gap-34"
+                >
+                  <Typography variant="span" className="font-semibold">
+                    {link.label}
+                  </Typography>
+                  <Typography variant="span" className="font-semibold">
+                    <Link
+                      href={link.href}
+                      target={link.label !== "Email" ? "_blank" : undefined}
+                      rel={link.label !== "Email" ? "noopener noreferrer" : undefined}
+                      className="text-white group-hover:text-primary transition-colors underline-offset-4 hover:underline"
+                    >
+                      {link.value}
+                    </Link>
+                  </Typography>
+                </motion.div>
+              ))}
             </div>
           </div>
           <div className="flex md:w-114.5 w-full">
             <ContactForm />
           </div>
-        </div>
+        </motion.div>
       </div>
     </footer>
   );

@@ -2,6 +2,7 @@
 
 import { Button, Input } from "@/components/common";
 import { useState } from "react";
+import { motion, AnimatePresence } from "motion/react";
 
 type responseType = {
   type: "success" | "error";
@@ -33,16 +34,23 @@ const ContactForm = () => {
   };
   return (
     <form className="w-full flex flex-col gap-4.75" onSubmit={handleSubmit}>
-      {response && (
-        <p
-          className={
-            response.type === "success" ? "text-green-300" : "text-red-300"
-          }
-          role="status"
-        >
-          {response.message}
-        </p>
-      )}
+      <AnimatePresence>
+        {response && (
+          <motion.p
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            className={`p-3 rounded-lg text-sm font-medium ${
+              response.type === "success"
+                ? "bg-green-500/20 text-green-300 border border-green-500/30"
+                : "bg-red-500/20 text-red-300 border border-red-500/30"
+            }`}
+            role="status"
+          >
+            {response.message}
+          </motion.p>
+        )}
+      </AnimatePresence>
       <Input
         type="text"
         name="fullName"
