@@ -27,7 +27,7 @@ const PortfolioBottom = () => {
         value: "string",
       },
       title: "Voy Vista",
-      desc: "Voy Vista is a digital website that helps user discover hidden places, cultural sites ,adventurous destinations and unique travel experiences  and historical places across Nigeria, ",
+      desc: "Voy Vista is a digital website that helps user discover hidden places, cultural sites, adventurous destinations and unique travel experiences  and historical places across Nigeria, ",
       image: "/assets/portfolio/Voy-Vista-bg.svg",
     },
     {
