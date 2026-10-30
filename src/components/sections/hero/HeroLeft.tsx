@@ -38,7 +38,7 @@ const HeroLeft = () => {
         <motion.div variants={itemVariants}>
           <Typography className="text-black" variant="h1">
             Hi, I am
-            <Typography className="" variant="h1" as="span">
+            <Typography variant="h1" as="span">
               &nbsp;Priscilla Ijomah.
             </Typography>
           </Typography>
