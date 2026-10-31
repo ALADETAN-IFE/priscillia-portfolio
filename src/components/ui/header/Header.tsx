@@ -127,6 +127,7 @@ const Header = () => {
           {isMenuOpen ? <X size={26} /> : <Menu size={26} />}
         </motion.button>
 
+      </div>
         <AnimatePresence>
           {isMenuOpen && (
             <motion.div
@@ -134,7 +135,7 @@ const Header = () => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -8 }}
               transition={{ duration: 0.2 }}
-              className="absolute top-full bg-white p-4 z-10 w-full"
+              className="absolute top-[98%] rounded-lg bg-white/70 shadow-lg backdrop-blur-md p-4 z-10 w-9/10"
             >
               <nav className="flex gap-3 md:hidden flex-col items-center">
                 {navLinks.map((link) => {
@@ -163,7 +164,6 @@ const Header = () => {
             </motion.div>
           )}
         </AnimatePresence>
-      </div>
     </motion.header>
   );
 };
