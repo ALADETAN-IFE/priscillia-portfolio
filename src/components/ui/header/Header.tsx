@@ -20,8 +20,34 @@ const Header = () => {
   ];
 
   useEffect(() => {
+    const sectionIds = ["home", "about", "services", "portfolio", "contact"];
+
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 16);
+
+      const isAtBottom =
+        window.innerHeight + window.scrollY >=
+        document.documentElement.scrollHeight - 60;
+
+      if (isAtBottom) {
+        setPath("#contact");
+        return;
+      }
+
+      const triggerPoint = window.innerHeight * 0.35;
+      let current = "#home";
+
+      for (const id of sectionIds) {
+        const el = document.getElementById(id);
+        if (el) {
+          const rect = el.getBoundingClientRect();
+          if (rect.top <= triggerPoint) {
+            current = `#${id}`;
+          }
+        }
+      }
+
+      setPath(current);
     };
 
     handleScroll();
@@ -34,10 +60,11 @@ const Header = () => {
 
   useEffect(() => {
     const handleHashChange = () => {
-      setPath(window.location.hash);
+      if (window.location.hash) {
+        setPath(window.location.hash);
+      }
     };
 
-    handleHashChange();
     window.addEventListener("hashchange", handleHashChange);
 
     return () => {
