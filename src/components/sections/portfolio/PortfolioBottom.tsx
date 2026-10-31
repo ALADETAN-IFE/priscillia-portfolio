@@ -75,7 +75,7 @@ const PortfolioBottom = () => {
             delay: index * 0.1,
             ease: [0.21, 0.47, 0.32, 0.98] as const,
           }}
-          className="flex bg-project-bg rounded-[5px] max-sm:px-2.5 justify-center items-center w-full py-7 border border-gray-100/80 shadow-sm hover:shadow-xl transition-all duration-300"
+          className="group flex bg-project-bg rounded-[5px] max-sm:px-2.5 justify-center items-center w-full py-7 border border-gray-100/80 shadow-sm hover:shadow-xl transition-all duration-300"
         >
           <div
             className={`flex h-full w-94/100 gap-12.5 max-md:items-center ${
@@ -84,7 +84,7 @@ const PortfolioBottom = () => {
                 : "flex-col md:flex-row justify-start"
             }`}
           >
-            <div className="overflow-hidden rounded-xl md:w-1/2 w-full flex items-center justify-center bg-gray-100 shadow-sm">
+            <div className="overflow-hidden md:w-1/2 w-full flex items-center justify-center bg-gray-100 shadow-sm">
               <Image
                 src={project.image}
                 alt={`${project.title.toLowerCase().replaceAll(" ", "-")}_icon`}
