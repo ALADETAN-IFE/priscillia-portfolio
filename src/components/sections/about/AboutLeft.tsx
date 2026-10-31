@@ -60,7 +60,13 @@ const AboutLeft = () => {
         </motion.div>
       </div>
       <motion.div variants={itemVariants}>
-        <Button value="More about me" className="w-fit" />
+        <Button
+          value="More about me"
+          className="w-fit"
+          onClick={() => {
+            document.getElementById("services")?.scrollIntoView({ behavior: "smooth" });
+          }}
+        />
       </motion.div>
     </motion.div>
   );

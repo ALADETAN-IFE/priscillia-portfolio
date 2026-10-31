@@ -112,6 +112,9 @@ const Header = () => {
           icon={false}
           rounded={false}
           className="h-8.5! w-28.75 max-md:hidden"
+          onClick={() => {
+            document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+          }}
         />
         <motion.button
           whileTap={{ scale: 0.92 }}
