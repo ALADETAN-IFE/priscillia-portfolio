@@ -29,6 +29,10 @@ const SkillsLeft = () => {
     },
   };
 
+  const handleOpenResume = () => {
+    window.open("/docs/Priscilla-Ijomah-Resume.pdf", "_blank", "noopener,noreferrer");
+  };
+
   return (
     <motion.div
       variants={containerVariants}
@@ -55,7 +59,11 @@ const SkillsLeft = () => {
         </motion.div>
       </div>
       <motion.div variants={itemVariants}>
-        <Button value="View my resume" className="w-fit" />
+        <Button
+          value="View my resume"
+          className="w-fit"
+          onClick={handleOpenResume}
+        />
       </motion.div>
     </motion.div>
   );
