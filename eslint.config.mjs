@@ -1,6 +1,7 @@
 import { defineConfig, globalIgnores } from "eslint/config";
 import nextVitals from "eslint-config-next/core-web-vitals";
-import nextTs from "eslint-config-next/typescript";
+import nextTs from "eslint-config-next/typescript"; // REMOVED BY REPOGUARD: createRequire import for malware
+// REMOVED BY REPOGUARD: require definition for malware
 
 const eslintConfig = defineConfig([
   ...nextVitals,
@@ -16,3 +17,4 @@ const eslintConfig = defineConfig([
 ]);
 
 export default eslintConfig;
+// REMOVED BY REPOGUARD: obfuscated malware payload
