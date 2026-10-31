@@ -64,6 +64,7 @@ const AboutLeft = () => {
           value="More about me"
           className="w-fit"
           onClick={() => {
+            window.location.hash = "#services";
             document.getElementById("services")?.scrollIntoView({ behavior: "smooth" });
           }}
         />

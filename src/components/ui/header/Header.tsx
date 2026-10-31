@@ -31,6 +31,9 @@ const Header = () => {
 
       if (isAtBottom) {
         setPath("#contact");
+        if (window.location.hash !== "#contact") {
+          window.history.replaceState(null, "", "#contact");
+        }
         return;
       }
 
@@ -48,6 +51,9 @@ const Header = () => {
       }
 
       setPath(current);
+      if (window.location.hash !== current) {
+        window.history.replaceState(null, "", current);
+      }
     };
 
     handleScroll();
@@ -140,6 +146,8 @@ const Header = () => {
           rounded={false}
           className="h-8.5! w-28.75 max-md:hidden"
           onClick={() => {
+            setPath("#contact");
+            window.location.hash = "#contact";
             document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
           }}
         />
