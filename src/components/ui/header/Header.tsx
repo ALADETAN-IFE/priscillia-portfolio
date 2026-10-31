@@ -38,21 +38,33 @@ const Header = () => {
       }
 
       const triggerPoint = window.innerHeight * 0.35;
-      let current = "#home";
+      let currentSection = "home";
 
       for (const id of sectionIds) {
         const el = document.getElementById(id);
         if (el) {
           const rect = el.getBoundingClientRect();
           if (rect.top <= triggerPoint) {
-            current = `#${id}`;
+            currentSection = id;
           }
         }
       }
 
-      setPath(current);
-      if (window.location.hash !== current) {
-        window.history.replaceState(null, "", current);
+      if (currentSection === "home") {
+        setPath("/");
+        if (window.location.hash) {
+          window.history.replaceState(
+            null,
+            "",
+            window.location.pathname + window.location.search
+          );
+        }
+      } else {
+        const targetHash = `#${currentSection}`;
+        setPath(targetHash);
+        if (window.location.hash !== targetHash) {
+          window.history.replaceState(null, "", targetHash);
+        }
       }
     };
 
@@ -68,6 +80,8 @@ const Header = () => {
     const handleHashChange = () => {
       if (window.location.hash) {
         setPath(window.location.hash);
+      } else {
+        setPath("/");
       }
     };
 
@@ -78,9 +92,21 @@ const Header = () => {
     };
   }, []);
 
-  const activePath = path || "#home";
+  const activePath = path || "/";
   const handleNavClick = (href: string) => {
-    setPath(href);
+    if (href === "/") {
+      setPath("/");
+      if (window.location.hash) {
+        window.history.pushState(
+          null,
+          "",
+          window.location.pathname + window.location.search
+        );
+      }
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      setPath(href);
+    }
     setIsMenuOpen(false);
   };
 
@@ -118,8 +144,10 @@ const Header = () => {
         />
         <nav className="flex gap-10 [@media(min-width:769px)]:gap-13 max-md:hidden">
           {navLinks.map((link: string) => {
-            const href = `#${link.toLowerCase()}`;
-            const isActive = activePath === href;
+            const href = link === "Home" ? "/" : `#${link.toLowerCase()}`;
+            const isActive =
+              (link === "Home" && (activePath === "/" || activePath === "")) ||
+              activePath === href;
 
             return (
               <Link
@@ -174,8 +202,10 @@ const Header = () => {
             >
               <nav className="flex gap-3 md:hidden flex-col items-center">
                 {navLinks.map((link) => {
-                  const href = `#${link.toLowerCase()}`;
-                  const isActive = activePath === href;
+                  const href = link === "Home" ? "/" : `#${link.toLowerCase()}`;
+                  const isActive =
+                    (link === "Home" && (activePath === "/" || activePath === "")) ||
+                    activePath === href;
 
                   return (
                     <Link
