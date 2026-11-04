@@ -91,6 +91,7 @@ const PortfolioBottom = () => {
                 width={556}
                 height={384}
                 className="w-full h-auto object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+                loading="eager"
               />
             </div>
             <div className="flex flex-col gap-6.25 md:max-w-104">
